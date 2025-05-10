@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { FaCode, FaServer, FaGraduationCap, FaLaptopCode, FaBrain } from 'react-icons/fa';
 import profileImage from '../assets/IMG_20250322_201248.jpg'; // Import the profile image
-import resumePDF from '../assets/resume_7_3_25.pdf'; // Import your resume file
+import resumePDF from '../assets/krishna_paridwal_resume.pdf'; // Import your resume file
 
 const About = () => {
   const education = {
