@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaStar } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaStar, FaLinkedin } from 'react-icons/fa';
+import img1 from '../assets/uma_overseas.png'; 
+import img2 from '../assets/omads.png';
+import img3 from '../assets/globalconnect.png'; 
 
 const Projects = () => {
   const projects = [
@@ -7,7 +10,7 @@ const Projects = () => {
       title: "E-Commerce Platform",
       description: "A full-featured e-commerce platform with real-time inventory management, payment processing, and admin dashboard.",
       tags: ["React", "Node.js", "MongoDB", "Stripe"],
-      image: "https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      image: img1,
       github: "https://github.com",
       demo: "https://demo.com",
       category: "personal"
@@ -16,7 +19,7 @@ const Projects = () => {
       title: "Social Media Dashboard",
       description: "Analytics dashboard for social media management with real-time data visualization and reporting.",
       tags: ["React", "D3.js", "Firebase", "Tailwind"],
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      image: img2,
       github: "https://github.com",
       demo: "https://demo.com",
       category: "personal"
@@ -25,29 +28,45 @@ const Projects = () => {
 
   const freelanceProjects = [
     {
-      title: "Restaurant Website",
-      description: "Modern restaurant website with online ordering system and table reservations.",
-      client: "Fine Dining Restaurant",
-      tags: ["React", "Node.js", "Stripe", "MongoDB"],
-      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      demo: "https://demo.com",
+      title: "UmaOverseas",
+      description: "An international website developed as my first live freelancing project. Built with React.js and Vite for blazing-fast performance, featuring a modern and responsive design with Tailwind CSS.",
+      client: "UmaOverseas",
+      tags: ["React", "Vite", "Tailwind CSS", "Responsive Design"],
+      image: img3, 
+      demo: "https://www.umaoverseasedu.com/",
+      linkedinPost: "https://www.linkedin.com/posts/krishna-paridwal_webdeveloperforhire-reactjs-freelancedeveloper-activity-7306313896988925952-u5BG",
       testimonial: {
-        text: "Exceptional work! The website perfectly captures our restaurant's essence.",
-        author: "John Smith",
-        role: "Restaurant Owner"
+        text: "Krishna delivered our international website exactly as we envisioned. The site performs exceptionally well across all devices.",
+        author: "Uma Overseas Team",
+        role: "Client"
       }
     },
     {
-      title: "Real Estate Platform",
-      description: "Property listing and management platform with virtual tours.",
-      client: "Premium Properties",
-      tags: ["Next.js", "Three.js", "PostgreSQL", "AWS"],
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      demo: "https://demo.com",
+      title: "Om Advertisements",
+      description: "An OOH (Out-of-Home) hoarding company website built with React + Vite for high performance. Features GSAP animations for smooth interactions and a fixed top navbar for seamless navigation.",
+      client: "Om Advertisements",
+      tags: ["React", "Vite", "GSAP Animations", "UX Optimization"],
+      image: img1, 
+      demo: "https://www.omads.in",
+      linkedinPost: "https://www.linkedin.com/posts/krishna-paridwal_techstack-webdevelopment-reactjs-activity-7293694922510008323-Og5K",
       testimonial: {
-        text: "The virtual tour feature has revolutionized how we showcase properties.",
-        author: "Sarah Johnson",
-        role: "Marketing Director"
+        text: "The website perfectly represents our brand and has significantly improved our online presence. The animations are particularly impressive.",
+        author: "Om Advertisements Team",
+        role: "Client"
+      }
+    },
+    {
+      title: "Global Connect",
+      description: "A platform to help students navigate visa processes for studying abroad. Features smooth animations, Mail.js integration for communication, and secure forms for data privacy.",
+      client: "Global Connect",
+      tags: ["React", "Vite", "Mail.js", "Form Security", "UX Optimization"],
+      image: img2, 
+      demo: "https://www.globalconnectvisaservices.com/",
+      linkedinPost: "https://www.linkedin.com/posts/krishna-paridwal_webdevelopment-frontenddevelopment-freelancingjourney-activity-7288083003220594688-dd83",
+      testimonial: {
+        text: "This platform has transformed how we interact with students. The seamless experience has increased our conversion rates significantly.",
+        author: "Global Connect Team",
+        role: "Client"
       }
     }
   ];
@@ -122,7 +141,7 @@ const Projects = () => {
         >
           <h2 className="text-4xl font-bold text-white mb-4">Freelance Projects</h2>
           <p className="text-secondary text-lg max-w-3xl mx-auto">
-            Client projects that demonstrate my ability to deliver professional solutions.
+            Client projects that demonstrate my professional solutions and real-world impact.
           </p>
         </motion.div>
 
@@ -170,15 +189,24 @@ const Projects = () => {
                     <p className="text-secondary text-sm">{project.testimonial.role}</p>
                   </div>
                 </div>
-                <div className="mt-6 text-center">
+                <div className="mt-6 flex justify-center items-center gap-4">
                   <a
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-violet-400 hover:text-violet-300 transition-colors"
                   >
-                    <span>View Project</span>
+                    <span>Visit Live Website</span>
                     <FaExternalLinkAlt size={14} />
+                  </a>
+                  <a
+                    href={project.linkedinPost}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
+                  >
+                    <span>LinkedIn Post</span>
+                    <FaLinkedin size={14} />
                   </a>
                 </div>
               </div>
