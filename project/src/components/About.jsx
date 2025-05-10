@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { FaCode, FaServer, FaGraduationCap, FaLaptopCode, FaBrain } from 'react-icons/fa';
 import profileImage from '../assets/IMG_20250322_201248.jpg'; // Import the profile image
+import resumePDF from '../assets/resume_7_3_25.pdf'; // Import your resume file
 
 const About = () => {
   const education = {
@@ -36,6 +37,16 @@ const About = () => {
       description: "Constantly exploring new technologies and frameworks"
     }
   ];
+
+  // Function to handle resume download
+  const handleDownloadResume = () => {
+    const link = document.createElement('a');
+    link.href = resumePDF;
+    link.download = 'Krishna_Paridwal_Resume.pdf'; // You can set the filename here
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <section id="about" className="py-20 bg-tertiary relative overflow-hidden">
@@ -100,10 +111,11 @@ const About = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="relative group"
+              onClick={handleDownloadResume}
             >
               <div className="absolute -inset-0.5 bg-gradient-to-r from-violet-600 to-cyan-500 rounded-lg blur opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
               <span className="relative px-8 py-4 bg-black rounded-lg leading-none flex items-center text-gray-300 group-hover:text-gray-100 transition duration-200">
-                Download CV
+                Download Resume
               </span>
             </motion.button>
           </motion.div>
