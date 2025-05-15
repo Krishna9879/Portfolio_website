@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
@@ -7,12 +7,17 @@ const Navbar = () => {
   const [nav, setNav] = useState(false);
   const location = useLocation();
 
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   const links = [
     { path: '/', label: 'Home' },
+    { path: '/projects', label: 'Projects' },
     { path: '/about', label: 'About' },
     { path: '/experience', label: 'Experience' },
     { path: '/skills', label: 'Skills' },
-    { path: '/projects', label: 'Projects' },
     { path: '/contact', label: 'Contact' },
   ];
 
