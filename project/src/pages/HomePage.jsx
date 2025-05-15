@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform, useSpring, AnimatePresence } from 'framer-motion';
 import { Parallax } from 'react-parallax';
 import { Tilt } from 'react-tilt';
+import { Link } from 'react-router-dom';
 import { TypeAnimation } from 'react-type-animation';
 import { FaGithub, FaLinkedin, FaTwitter, FaCode, FaServer, FaTools } from 'react-icons/fa';
 
@@ -97,28 +98,28 @@ const Hero = () => {
             transition={{ delay: 0.8, duration: 0.8 }}
             className="flex flex-wrap justify-center gap-6"
           >
-            <button className="relative group">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-violet-600 to-cyan-500 rounded-lg blur opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
-              <a
-                href="#projects"
-                className="relative px-8 py-4 bg-black rounded-lg leading-none flex items-center"
-              >
-                <span className="text-gray-300 group-hover:text-gray-100 transition duration-200">
-                  View Projects
-                </span>
-              </a>
-            </button>
+              <button className="relative group">
+      <div className="absolute -inset-0.5 bg-gradient-to-r from-violet-600 to-cyan-500 rounded-lg blur opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+      <Link
+        to="/projects"
+        className="relative px-8 py-4 bg-black rounded-lg leading-none flex items-center"
+      >
+        <span className="text-gray-300 group-hover:text-gray-100 transition duration-200">
+          View Projects
+        </span>
+      </Link>
+    </button>
 
             <button className="relative group">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-violet-600 rounded-lg blur opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 className="relative px-8 py-4 bg-black rounded-lg leading-none flex items-center"
               >
                 <span className="text-gray-300 group-hover:text-gray-100 transition duration-200">
                   Contact Me
                 </span>
-              </a>
+              </Link>
             </button>
           </motion.div>
         </motion.div>
