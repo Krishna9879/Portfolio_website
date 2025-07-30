@@ -98,17 +98,17 @@ const Hero = () => {
             transition={{ delay: 0.8, duration: 0.8 }}
             className="flex flex-wrap justify-center gap-6"
           >
-              <button className="relative group">
-      <div className="absolute -inset-0.5 bg-gradient-to-r from-violet-600 to-cyan-500 rounded-lg blur opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
-      <Link
-        to="/projects"
-        className="relative px-8 py-4 bg-black rounded-lg leading-none flex items-center"
-      >
-        <span className="text-gray-300 group-hover:text-gray-100 transition duration-200">
-          View Projects
-        </span>
-      </Link>
-    </button>
+            <button className="relative group">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-violet-600 to-cyan-500 rounded-lg blur opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+              <Link
+                to="/projects"
+                className="relative px-8 py-4 bg-black rounded-lg leading-none flex items-center"
+              >
+                <span className="text-gray-300 group-hover:text-gray-100 transition duration-200">
+                  View Projects
+                </span>
+              </Link>
+            </button>
 
             <button className="relative group">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-violet-600 rounded-lg blur opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
@@ -255,27 +255,28 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ scale: 0.5, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ type: "spring", stiffness: 100, delay: index * 0.1 }}
-              >
-                <Tilt options={{ max: 25, scale: 1.05 }}>
-                  <div className="bg-black/30 backdrop-blur-sm p-8 rounded-xl text-center transform hover:translate-y-[-10px] transition-transform duration-300 border border-violet-500/20 hover:border-violet-500/50">
-                    <motion.div
-                      className="text-5xl mb-4"
-                      animate={{ rotate: [0, 10, -10, 0] }}
-                      transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
-                    >
-                      {stat.icon}
-                    </motion.div>
-                    <div className="text-5xl font-bold gradient-text">{stat.value}</div>
-                    <p className="text-gray-300 mt-2 text-lg">{stat.label}</p>
-                  </div>
-                </Tilt>
-              </motion.div>
+              <Link to="/projects" key={index}>
+                <motion.div
+                  initial={{ scale: 0.5, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ type: "spring", stiffness: 100, delay: index * 0.1 }}
+                >
+                  <Tilt options={{ max: 25, scale: 1.05 }}>
+                    <div className="bg-black/30 backdrop-blur-sm p-8 rounded-xl text-center transform hover:translate-y-[-10px] transition-transform duration-300 border border-violet-500/20 hover:border-violet-500/50">
+                      <motion.div
+                        className="text-5xl mb-4"
+                        animate={{ rotate: [0, 10, -10, 0] }}
+                        transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+                      >
+                        {stat.icon}
+                      </motion.div>
+                      <div className="text-5xl font-bold gradient-text">{stat.value}</div>
+                      <p className="text-gray-300 mt-2 text-lg">{stat.label}</p>
+                    </div>
+                  </Tilt>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>
@@ -393,7 +394,7 @@ const HomePage = () => {
                   <div className="bg-black/30 backdrop-blur-sm p-8 rounded-xl border border-violet-500/20 hover:border-violet-500/50 transition-all duration-300 h-full">
                     <motion.div
                       whileHover={{ scale: 1.2 }}
-                      className="flex justify-center mb-6"
+                      className="-progress flex justify-center mb-6"
                     >
                       {service.icon}
                     </motion.div>
