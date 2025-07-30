@@ -3,36 +3,38 @@ import { FaGithub, FaExternalLinkAlt, FaStar, FaLinkedin } from 'react-icons/fa'
 import img1 from '../assets/uma_overseas.png'; 
 import img2 from '../assets/omads.png';
 import img3 from '../assets/globalconnect.png'; 
+import img4 from '../assets/Oasis.png'; 
+import img5 from '../assets/omkar_ss.png'; 
 
 const Projects = () => {
-  const projects = [
+  // Featured Projects (now using freelance projects)
+  const featuredProjects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-featured e-commerce platform with real-time inventory management, payment processing, and admin dashboard.",
-      tags: ["React", "Node.js", "MongoDB", "Stripe"],
+      title: "UmaOverseas",
+      description: "An international education consultancy website developed as my first live freelancing project. Built with React.js and Vite for blazing-fast performance, featuring a modern and responsive design with Tailwind CSS.",
+      tags: ["React", "Vite", "Tailwind CSS", "Responsive Design"],
       image: img1,
-      github: "https://github.com",
-      demo: "https://demo.com",
-      category: "personal"
+      demo: "https://www.umaoverseasedu.com/",
+      category: "freelance"
     },
     {
-      title: "Social Media Dashboard",
-      description: "Analytics dashboard for social media management with real-time data visualization and reporting.",
-      tags: ["React", "D3.js", "Firebase", "Tailwind"],
+      title: "Om Advertisements",
+      description: "An OOH (Out-of-Home) advertising company website built with React + Vite. Features GSAP animations for smooth interactions and a fixed top navbar for seamless navigation.",
+      tags: ["React", "Vite", "GSAP Animations", "UX Optimization"],
       image: img2,
-      github: "https://github.com",
-      demo: "https://demo.com",
-      category: "personal"
+      demo: "https://www.omads.in",
+      category: "freelance"
     }
   ];
 
+  // Freelance Projects (all five)
   const freelanceProjects = [
     {
       title: "UmaOverseas",
-      description: "An international website developed as my first live freelancing project. Built with React.js and Vite for blazing-fast performance, featuring a modern and responsive design with Tailwind CSS.",
+      description: "Developed a dynamic international education consultancy website that increased brand visibility and user engagement. Implemented responsive design principles for optimal viewing across all devices.",
       client: "UmaOverseas",
       tags: ["React", "Vite", "Tailwind CSS", "Responsive Design"],
-      image: img3, 
+      image: img1,
       demo: "https://www.umaoverseasedu.com/",
       linkedinPost: "https://www.linkedin.com/posts/krishna-paridwal_webdeveloperforhire-reactjs-freelancedeveloper-activity-7306313896988925952-u5BG",
       testimonial: {
@@ -43,10 +45,10 @@ const Projects = () => {
     },
     {
       title: "Om Advertisements",
-      description: "An OOH (Out-of-Home) hoarding company website built with React + Vite for high performance. Features GSAP animations for smooth interactions and a fixed top navbar for seamless navigation.",
+      description: "Created a modern OOH advertising platform with interactive elements and smooth animations. Optimized UX resulting in improved client acquisition and engagement metrics.",
       client: "Om Advertisements",
       tags: ["React", "Vite", "GSAP Animations", "UX Optimization"],
-      image: img1, 
+      image: img2,
       demo: "https://www.omads.in",
       linkedinPost: "https://www.linkedin.com/posts/krishna-paridwal_techstack-webdevelopment-reactjs-activity-7293694922510008323-Og5K",
       testimonial: {
@@ -57,15 +59,43 @@ const Projects = () => {
     },
     {
       title: "Global Connect",
-      description: "A platform to help students navigate visa processes for studying abroad. Features smooth animations, Mail.js integration for communication, and secure forms for data privacy.",
+      description: "Built a comprehensive platform for international students with visa processing features. Integrated Mail.js for communication and implemented secure forms for data privacy.",
       client: "Global Connect",
       tags: ["React", "Vite", "Mail.js", "Form Security", "UX Optimization"],
-      image: img2, 
+      image: img3,
       demo: "https://www.globalconnectvisaservices.com/",
       linkedinPost: "https://www.linkedin.com/posts/krishna-paridwal_webdevelopment-frontenddevelopment-freelancingjourney-activity-7288083003220594688-dd83",
       testimonial: {
         text: "This platform has transformed how we interact with students. The seamless experience has increased our conversion rates significantly.",
         author: "Global Connect Team",
+        role: "Client"
+      }
+    },
+    {
+      title: "Oasis Hotel",
+      description: "Developed a responsive hotel booking website focused on user experience and modern aesthetics. Implemented performance optimizations for fast loading times and smooth interactions.",
+      client: "Oasis Hotel",
+      tags: ["React", "Tailwind CSS", "Performance", "UX Design"],
+      image: img4,
+      demo: "https://www.oasishotelwi.com/",
+      linkedinPost: "https://www.linkedin.com/in/krishna-paridwal/",
+      testimonial: {
+        text: "Our booking conversions increased by 30% after launching the new website. The modern design perfectly captures our brand essence.",
+        author: "Oasis Hotel Management",
+        role: "Client"
+      }
+    },
+    {
+      title: "Omkar Research Analyst",
+      description: "Full-stack financial services platform featuring React frontend, Node.js backend, and MongoDB database. Created a professional interface for showcasing financial analysis services.",
+      client: "Omkar Research Analyst",
+      tags: ["React", "Node.js", "MongoDB", "Full-Stack", "Express"],
+      image: img5,
+      demo: "https://www.omkarresearchanalyst.in/",
+      linkedinPost: "https://www.linkedin.com/in/krishna-paridwal/",
+      testimonial: {
+        text: "The website has elevated our professional image and made complex financial data accessible to our clients.",
+        author: "Omkar Research Team",
         role: "Client"
       }
     }
@@ -83,13 +113,13 @@ const Projects = () => {
         >
           <h2 className="text-4xl font-bold text-white mb-4">Featured Projects</h2>
           <p className="text-secondary text-lg max-w-3xl mx-auto">
-            A showcase of my technical expertise and creative problem-solving abilities.
+            Selected projects showcasing technical expertise and creative solutions
           </p>
         </motion.div>
 
-        {/* Personal Projects */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-          {projects.map((project, index) => (
+        {/* Featured Projects */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-20">
+          {featuredProjects.map((project, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}
@@ -105,9 +135,6 @@ const Projects = () => {
                   className="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-white hover:text-violet-400">
-                    <FaGithub size={24} />
-                  </a>
                   <a href={project.demo} target="_blank" rel="noopener noreferrer" className="text-white hover:text-violet-400">
                     <FaExternalLinkAlt size={24} />
                   </a>
@@ -141,7 +168,7 @@ const Projects = () => {
         >
           <h2 className="text-4xl font-bold text-white mb-4">Freelance Projects</h2>
           <p className="text-secondary text-lg max-w-3xl mx-auto">
-            Client projects that demonstrate my professional solutions and real-world impact.
+            Professional solutions delivering real-world impact for diverse clients
           </p>
         </motion.div>
 

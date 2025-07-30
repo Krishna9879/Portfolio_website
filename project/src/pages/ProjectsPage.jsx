@@ -6,6 +6,10 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import img1 from '../assets/omkar_ss.png'; 
+import img2 from '../assets/omads.png';
+import img3 from '../assets/globalconnect.png'; 
+import img4 from '../assets/Oasis.png'; 
 
 const ProjectsPage = () => {
   const { scrollYProgress } = useScroll();
@@ -14,22 +18,28 @@ const ProjectsPage = () => {
 
   const featuredProjects = [
     {
-      title: "E-Commerce Platform",
-      description: "Next-gen shopping experience",
-      image: "https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      technologies: ["React", "Node.js", "MongoDB"]
+      title: "Omkar Research Analyst",
+      description: "Full-stack financial platform",
+      image: img1,
+      technologies: ["React", "Node.js", "MongoDB", "Express"]
     },
     {
-      title: "Social Media Dashboard",
-      description: "Real-time analytics platform",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      technologies: ["Vue.js", "Firebase", "D3.js"]
+      title: "Om Advertisements",
+      description: "OOH advertising platform",
+      image: img2,
+      technologies: ["React", "Vite", "GSAP Animations"]
     },
     {
-      title: "AI Chat Application",
-      description: "Intelligent conversation system",
-      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      technologies: ["Python", "TensorFlow", "WebSocket"]
+      title: "Global Connect",
+      description: "Visa processing platform",
+      image: img3,
+      technologies: ["React", "Vite", "Mail.js"]
+    },
+    {
+      title: "Oasis Hotel",
+      description: "Hotel booking website",
+      image: img4,
+      technologies: ["React", "Tailwind CSS", "UX Design"]
     },
   ];
 
