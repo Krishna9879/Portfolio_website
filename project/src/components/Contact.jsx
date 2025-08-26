@@ -13,6 +13,7 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
+    console.log('Form Data:', Object.fromEntries(new FormData(formRef.current)));
     console.log('EmailJS Service ID:', import.meta.env.VITE_EMAILJS_SERVICE_ID);
     console.log('EmailJS Template ID:', import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
     console.log('EmailJS Public Key:', import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
