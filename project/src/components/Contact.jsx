@@ -13,12 +13,16 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
+    console.log('EmailJS Service ID:', import.meta.env.VITE_EMAILJS_SERVICE_ID);
+    console.log('EmailJS Template ID:', import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
+    console.log('EmailJS Public Key:', import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+
     try {
       await emailjs.sendForm(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      formRef.current,
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
       toast.success("Thank you for your message! I'll respond within 24 hours.", {
@@ -32,7 +36,7 @@ const Contact = () => {
       });
       formRef.current.reset();
     } catch (error) {
-      console.error('Failed to send message:', error);
+      console.error('Failed to send message:', error.status, error.text);
       toast.error("Message failed to send. Please try again or contact me directly.", {
         position: "top-center",
         autoClose: 5000,
